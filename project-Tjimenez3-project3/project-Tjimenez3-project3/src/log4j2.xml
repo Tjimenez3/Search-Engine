@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%msg%throwable{short.localizedMessage}%n" />
+        </Console>
+        <File name="MyFile" fileName="debug.log" immediateFlush="true" append="false">
+            <PatternLayout pattern="[%sn %level{length=2}] %class.%method %thread: %msg %throwable{3}%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="Console" level="INFO" />
+            <AppenderRef ref="MyFile" level="ALL"/>
+        </Root>
+    </Loggers>
+</Configuration>
